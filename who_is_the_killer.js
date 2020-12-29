@@ -6,7 +6,6 @@
 // return the name of the one killer, in our case 'James' because he is the only person that saw both 'Lucas' and 'Bill'
 
 function killer(suspectInfo, dead) {
-    const lengthArray = [];
     const getKiller = {};
     for (const [key, value] of Object.entries(suspectInfo)) {
       const victims = [];
@@ -18,7 +17,6 @@ function killer(suspectInfo, dead) {
         }
       }
       getKiller[key] = victims.length;
-      console.log("suspect : ", suspectInfo[key], "victims : ", victims.length)
     }
       killerSorted = Object.keys(getKiller).sort(function(a,b){return getKiller[b]-getKiller[a]})
       return killerSorted[0];
